@@ -4,7 +4,10 @@
  * User: ThomasLiu
  * Date: 16/8/8
  * Time: 21:16
+ *
+ * 这里是登录处理脚本
  */
+
 $data = $_GET["foo"];
 
 $arr_str = array(
