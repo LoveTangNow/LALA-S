@@ -17,3 +17,8 @@ function receiveStreamFile($receiveFile){
     }
     return $ret;
 }
+//定义服务器存储路径和文件名
+$receiveFile =  $_SERVER["DOCUMENT_ROOT"]."/LALA/photo/ll.png";
+$ret = receiveStreamFile($receiveFile);
+echo json_encode(array('success'=>(bool)$ret));
+?>
