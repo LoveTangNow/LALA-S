@@ -1,3 +1,4 @@
+
 <?php
 /**
  * Created by PhpStorm.
@@ -38,12 +39,12 @@
  * 得到一组FriendsID
  * FriendsID 存放于 一个数组中
  */
-
 //$userid = $_GET["userid"];
 $userid = 1;
 
 //链接数据库
 $mysqli = new mysqli('127.0.0.1', 'root', 'liujiacheng', 'Link_Now');
+mysqli_query($mysqli,"SET NAMES utf8");//mysqli_编码模式
 
 //查询
 $sql_friends = "select friend_id from FRIENDSHIP where user_id = ".$userid;
@@ -144,6 +145,15 @@ for ($i = 0;$i < count($Newsids); $i++){
     }
     mysqli_free_result($rst_news_photo);
 
+    //查出文字内容 detail
+    $sql_news_detail = "select news_detail from NEWS where news_id = ".$Newsids[$i];
+    $rst_news_detail = mysqli_query($mysqli, $sql_news_detail);
+    while ($row = mysqli_fetch_row($rst_news_detail)) {
+        //print $row[0]." ";
+        $arr_json[$i]["detail"] = $row[0];
+        //print "<br>";
+    }
+    mysqli_free_result($rst_news_detail);
 }
 
 echo(json_encode($arr_json));
