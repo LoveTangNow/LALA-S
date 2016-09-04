@@ -156,7 +156,7 @@ for ($i = 0;$i < count($Newsids); $i++){
     mysqli_free_result($rst_news_detail);
 }
 
-echo(json_encode($arr_json));
+echo (json_encode($arr_json));
 /**
  ** 按顺序找到所有FriendsID的NewsID
  *

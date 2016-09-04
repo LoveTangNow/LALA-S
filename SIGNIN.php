@@ -24,5 +24,5 @@ $arr_str = array(
     ),
 );
 
-echo(json_encode($arr_str));
+echo (json_encode($arr_str));
 ?>
