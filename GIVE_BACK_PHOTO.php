@@ -133,14 +133,14 @@ for ($i = 0;$i < count($Newsids); $i++){
     }
     mysqli_free_result($rst_news_sender_name);
 
-    //查出path
+    //查出path 其实就是名称
     $sql_news_photo = "select photo_path from PHOTO where news_id = ".$Newsids[$i];
     $rst_news_photo = mysqli_query($mysqli, $sql_news_photo);
     $num_news_photo = 0;
    // print $num_news_photo."photo_number";
     while ($row = mysqli_fetch_row($rst_news_photo)) {
         //print $row[0]." ";
-        $arr_json[$i]["photo"][$num_news_photo ++] = $row[0];
+        $arr_json[$i]["photo"][$num_news_photo ++] = "TEST_PHOTOS/".$row[0];
         //print "<br>";
     }
     mysqli_free_result($rst_news_photo);

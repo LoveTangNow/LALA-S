@@ -6,6 +6,6 @@
  * Time: 17:27
  */
 
-$a = $_GET["a"];
+$image = new ImageResize("/photo/1.png", NULL, 100);
 
-echo $a;
+$image->output();
