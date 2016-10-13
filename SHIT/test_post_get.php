@@ -6,6 +6,6 @@
  * Time: 17:27
  */
 
-$image = new ImageResize("/photo/1.png", NULL, 100);
+$a = $_POST["userid"];
 
-$image->output();
+echo $a;
